@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KaamConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img src="https://img.icons8.com/color/96/handshake.png" alt="KaamConnect Logo" class="nav-logo">
+                <span class="brand">KaamConnect</span>
+            </div>
+            <button class="nav-toggle" onclick="toggleNavbar()">&#9776;</button>
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="#" data-i18n="Home">Home</a>
+                    <a href="#" data-i18n="About Us">About Us</a>
+                    <a href="#" data-i18n="Services">Services</a>
+                    <a href="#" data-i18n="Contact">Contact</a>
+                    <a href="#" data-i18n="FAQs">FAQs</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button type="button" class="login-btn" onclick="openLogin()" data-i18n="Log in">Log in</button>
+                <select id="lang-select" class="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="en">EN</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+                <div class="font-size-controls">
+                    <button type="button" onclick="changeFontSize(-1)" title="Decrease font size">A-</button>
+                    <button type="button" onclick="changeFontSize(1)" title="Increase font size">A+</button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile dropdown -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-links">
+                <a href="#" data-i18n="Home">Home</a>
+                <a href="#" data-i18n="About Us">About Us</a>
+                <a href="#" data-i18n="Services">Services</a>
+                <a href="#" data-i18n="Contact">Contact</a>
+                <a href="#" data-i18n="FAQs">FAQs</a>
+            </div>
+            <div class="mobile-actions">
+                <button type="button" class="login-btn" onclick="openLogin()" data-i18n="Log in">Log in</button>
+                <select id="lang-select-mobile" class="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="en">EN</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+                <div class="font-size-controls">
+                    <button type="button" onclick="changeFontSize(-1)" title="Decrease font size">A-</button>
+                    <button type="button" onclick="changeFontSize(1)" title="Increase font size">A+</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 data-i18n="welcome">Welcome to <span class="kaamconnect">KaamConnect</span></h1>
+        </section>
+        <section class="cards-row">
+            <div class="card" id="worker-card" onclick="openForm('worker')">
+                <div class="card-img-title">
+                    <img src="https://img.icons8.com/fluency/64/worker-male.png" alt="Worker Logo" class="card-logo">
+                    <h2 data-i18n="worker">Worker</h2>
+                </div>
+            </div>
+            <div class="card" id="employee-card" onclick="openForm('employee')">
+                <div class="card-img-title">
+                    <img src="https://img.icons8.com/fluency/64/businessman.png" alt="Employee Logo" class="card-logo">
+                    <h2 data-i18n="employee">Employee</h2>
+                </div>
+            </div>
+            <div class="card" id="ngo-card" onclick="openForm('ngo')">
+                <div class="card-img-title">
+                    <img src="https://img.icons8.com/fluency/64/non-profit-organisation.png" alt="NGO Logo" class="card-logo">
+                    <h2 data-i18n="ngo">NGO</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content login-modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2 data-i18n="loginTitle">Log in</h2>
+            <form onsubmit="submitLogin(event)">
+                <label data-i18n="username">Username</label>
+                <input type="text" required>
+                <label data-i18n="password">Password</label>
+                <input type="password" required>
+                <button type="submit" data-i18n="loginBtn">Log in</button>
+            </form>
+        </div>
+    </div>
+    <!-- POPUP FORM MODALS -->
+    <div id="form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <div id="form-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
