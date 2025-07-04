@@ -49,21 +49,6 @@ of access, digital literacy, and trust in existing platforms. KaamConnect bridge
 
 ---
 
-## 🗂️ Project Structure
-kaamconnect/
-├── frontend/
-│ ├── index.html
-│ ├── styles.css
-│ └── script.js
-├── backend/
-│ ├── src/
-│ │ └── main/java/com/kaamconnect/...
-│ └── application.properties
-└── README.md
-
-
----
-
 ## 📊 Future Enhancements
 - Actual voice-based job access using IVR
 - Integration with WhatsApp for registration/posting
